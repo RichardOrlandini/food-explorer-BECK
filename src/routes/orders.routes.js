@@ -1,15 +1,15 @@
-const { Router } = require('express')
+const { Router } = require('express');
 
-const ordersRoutes = Router()
+const ordersRoutes = Router();
 
-const OrdersController = require('../controllers/OrdersController')
-const ensureAuthenticated = require('../middleware/ensureAuthenticated')
+const OrdersController = require('../controllers/OrdersController');
+const ensureAuthenticated = require('../middleware/ensureAuthenticated');
 
-const ordersController = new OrdersController()
+const ordersController = new OrdersController();
 
-ordersRoutes.use(ensureAuthenticated)
+ordersRoutes.use(ensureAuthenticated);
 
-ordersRoutes.get('/', ordersController.index)
-ordersRoutes.post('/', ordersController.create)
+ordersRoutes.get('/', ordersController.index);
+ordersRoutes.post('/', ordersController.create);
 
-module.exports = ordersRoutes
+module.exports = ordersRoutes;
